@@ -1,0 +1,31 @@
+## LStout, MPedulla
+## Montana Technological University
+## 05/09/2019
+## https://github.com/ljstout/pipeline
+## If you are using NCBI's eutils to get taxonomic lineages from the Taxonomy database online (like what happens when you do a Web BLAST at...
+##   https://blast.ncbi.nlm.nih.gov/Blast.cgiinstead of using a local copy of the database
+## ...then access a terminal with eutils installed and copy in this command (or similarly place it in another shell script).
+## NOTE: NCBI limits the number of queries you can send using the eutils program API, YOUR RESULTS WILL BE AFFECTEd by their servers denying excessive repeated requests for large consecutive input queries.
+## Change values to adapt to your experiment as necessary.
+####################################################################
+
+# 9606 is Homo sapiens, replace this with your taxID of interest to get its lineage.
+# Add or remove taxa following the pattern below to get the lineage you are interested in.
+
+efetch -db taxonomy \
+       -id 9606 \
+       -format xml \
+       | xtract -pattern Taxon \
+                -tab '\n' -sep '\t' \
+                -element TaxId,ScientificName \
+                -division LineageEx \
+                -group Taxon \
+                -if Rank -equals superkingdom \
+                -or Rank -equals kingdom \
+                -or Rank -equals phylum \
+                -or Rank -equals class \
+                -or Rank -equals order \
+                -or Rank -equals family \
+                -or Rank -equals genus \
+                -tab '\n' -sep '\t' \
+                -element Rank,ScientificName
