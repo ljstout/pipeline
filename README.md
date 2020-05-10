@@ -24,8 +24,8 @@ In spite of this, the majority of the scripts/code you would need to conduct a s
 + Necessary software installed, not limited to 
   + [BLAST+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download) 
   + [hmp_client](https://github.com/michbur/hmp_client) if you intend to use data from the [Human Microbiome Project](https://www.hmpdacc.org)
-  + [ETE3 Python module](https://pypi.org/project/ete3/#description) for obtaining lineages from your local copy of the Taxonomy database, assuming you do not use..
-  + [NCBI's Entrez-Direct E-Utilities; "eutils"](https://www.ncbi.nlm.nih.gov/books/NBK179288/) an API for accessing taxonomic information in small input loads via) 
+  + [ETE3 Python module](https://pypi.org/project/ete3/#description) for obtaining lineages from your local copy of the Taxonomy database, assuming you do not use...
+  + [NCBI's Entrez-Direct E-Utilities; "eutils"](https://www.ncbi.nlm.nih.gov/books/NBK179288/) an API for accessing taxonomic information in small input loads via 
   + [Python](https://www.python.org/downloads/)
 
 If you are just starting out, a lot of troubleshooting can be avoided by creating a simplistic file structure with your sequences, databases, scripts, and results each as subfolders of your overall "project" folder. The software and databases are necessarily picky about where things go, and going through these tutorials myself it isn't always clear whether things should be placed in folders, subfolders, etc.
